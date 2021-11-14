@@ -73,15 +73,22 @@ fn levinshtein(s1: String, s2: String) -> usize {
 }
 
 fn hamming(s1: String, s2: String) -> usize {
-    let same = s1.chars().zip(s2.chars()).filter(|(a, b)| a == b).count();
+    let same = s1
+        .chars()
+        .zip(s2.chars())
+        .filter(|(a, b)| a == b)
+        .count();
     s1.len() - same
 }
 
-fn main() {
+fn main () {
+
     let args: Vec<String> = env::args().collect();
     let command = &args[1];
     let code = if command == "ham" {
         "Hamming"
+    } else if command == "dam"{
+        "Damerau"
     } else {
         "Levinshtein"
     };
