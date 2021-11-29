@@ -2,7 +2,7 @@ use std::cmp;
 use std::env;
 
 fn usage() -> Result<usize, &'static str> {
-    Err("usage: dist [ham|lev] [string1] [string2]")
+    Err("usage: dist [ham|lev|dam] [string1] [string2]")
 }
 
 fn damerau(s1: String, s2: String) -> usize {
